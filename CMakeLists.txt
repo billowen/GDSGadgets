@@ -13,7 +13,5 @@ add_executable(testGDSGadgets main.cpp)
 add_library(libGDSGadgets 
     boundingrect.cpp boundingrect.h)
 
-add_subdirectory(GDS)
-
 target_link_libraries(libGDSGadgets Qt5::Gui)
 TARGET_LINK_LIBRARIES(testGDSGadgets Qt5::Widgets Qt5::Gui)
