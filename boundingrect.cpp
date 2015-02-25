@@ -193,10 +193,10 @@ namespace GDS
 		int mag = data->mag();
 		int angle = data->angle();
 		QTransform transform;
-		transform.translate(x + width / 2.0, y + height / 2.0);
+		transform.translate(x, y);
 		transform.scale(mag, mag);
 		transform.rotate(angle);
-		transform.translate(-(x + width / 2.0), -(y + height / 2.0));
+		transform.translate(-x, -y);
 		QRect rect2 = transform.mapRect(rect);
 
 		x = rect2.x();
