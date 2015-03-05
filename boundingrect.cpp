@@ -190,8 +190,8 @@ namespace GDS
 			return false;
 
 		QRect rect(x, y, width, height);
-		int mag = data->mag();
-		int angle = data->angle();
+		double mag = data->mag();
+		double angle = data->angle();
 		bool reflect = data->stransFlag(GDS::REFLECTION);
 		QTransform transform;
 		if (reflect)
