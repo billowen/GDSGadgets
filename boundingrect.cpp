@@ -192,11 +192,13 @@ namespace GDS
 		QRect rect(x, y, width, height);
 		int mag = data->mag();
 		int angle = data->angle();
+		bool reflect = data->stransFlag(GDS::REFLECTION);
 		QTransform transform;
-		transform.translate(x, y);
+		if (reflect)
+			transform.scale(1, -1);
 		transform.scale(mag, mag);
 		transform.rotate(angle);
-		transform.translate(-x, -y);
+		transform.translate(x, y);
 		QRect rect2 = transform.mapRect(rect);
 
 		x = rect2.x();
